@@ -2,7 +2,170 @@
 @tailwind components;
 
 body {
-  @apply p-12 bg-blue-500;
+  @apply p-12;
 }
 
 @tailwind utilities;
+
+.btn-primary,
+.prose a.btn-primary {
+  --bg-opacity: 1;
+  background-color: #6b46c1;
+  background-color: rgba(107, 70, 193, var(--bg-opacity));
+  --border-opacity: 1;
+  border-color: #6b46c1;
+  border-color: rgba(107, 70, 193, var(--border-opacity));
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+}
+
+.btn-google,
+.prose a.btn-google {
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  background-color: #4285f4;
+  border-color: #4285f4;
+}
+
+.btn,
+.prose a.btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  border-width: 2px;
+  border-style: solid;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+  --transform-translate-x: 0;
+  --transform-translate-y: 0;
+  --transform-rotate: 0;
+  --transform-skew-x: 0;
+  --transform-skew-y: 0;
+  --transform-scale-x: 1;
+  --transform-scale-y: 1;
+  transform: translateX(var(--transform-translate-x))
+    translateY(var(--transform-translate-y)) rotate(var(--transform-rotate))
+    skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y))
+    scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+  --transform-scale-x: 1;
+  --transform-scale-y: 1;
+}
+
+.text-primary {
+  --text-opacity: 1;
+  color: #6b46c1;
+  color: rgba(107, 70, 193, var(--text-opacity));
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.prose a.btn-primary:hover,
+.prose a.btn-primary:focus {
+  --bg-opacity: 1;
+  background-color: #44337a;
+  background-color: rgba(68, 51, 122, var(--bg-opacity));
+  --border-opacity: 1;
+  border-color: #44337a;
+  border-color: rgba(68, 51, 122, var(--border-opacity));
+}
+
+.btn-google:hover,
+.btn-google:focus,
+.prose a.btn-google:hover,
+.prose a.btn-google:focus {
+  background-color: #1d61d2;
+  border-color: #1d61d2;
+}
+
+.btn:active,
+.prose a.btn:active {
+  --transform-scale-x: 0.95;
+  --transform-scale-y: 0.95;
+  box-shadow: none;
+  outline: 0;
+}
+
+.card {
+  position: relative;
+  border-width: 1px;
+  border-style: solid;
+  --border-opacity: 1;
+  border-color: #edf2f7;
+  border-color: rgba(237, 242, 247, var(--border-opacity));
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  transition-property: box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.card-header {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  border-bottom-width: 0px;
+  --border-opacity: 1;
+  border-color: #edf2f7;
+  border-color: rgba(237, 242, 247, var(--border-opacity));
+  display: flex;
+  align-items: center;
+  --text-opacity: 1;
+  color: #2d3748;
+  color: rgba(45, 55, 72, var(--text-opacity));
+}
+
+.tag-input {
+  margin-top: 0.25rem;
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  border-width: 2px;
+  border-style: solid;
+  --border-opacity: 1;
+  border-color: #e2e8f0;
+  border-color: rgba(226, 232, 240, var(--border-opacity));
+  border-radius: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  box-shadow: none;
+  --text-opacity: 1;
+  color: #1a202c;
+  color: rgba(26, 32, 44, var(--text-opacity));
+}
