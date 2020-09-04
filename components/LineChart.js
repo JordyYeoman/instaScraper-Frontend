@@ -52,8 +52,15 @@ const LineChart = props => {
   };
 
   return (
-    <div>
-      <Line data={data} />
+    <div className="min-h-full w-full md:w-1/2 p-4">
+      <div className="p-4 shadow rounded-lg bg-white">
+        <Line
+          data={data}
+          options={{
+            maintainAspectRatio: true,
+          }}
+        />
+      </div>
     </div>
   );
 };

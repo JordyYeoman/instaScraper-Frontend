@@ -64,12 +64,7 @@ const BarChart = props => {
   }, []);
 
   const data = {
-    labels: [
-      'Morning - Before 9AM',
-      'Late Morning 9Am - 12PM',
-      'Arvo 12PM - 8PM',
-      'Late Arvo 8PM - 12AM',
-    ],
+    labels: ['12AM - 9AM', '9AM - 12PM', '12PM - 8PM', '8PM - 12AM'],
     datasets: [
       {
         label: 'Time of Day ~ Average Likes',
@@ -83,15 +78,15 @@ const BarChart = props => {
     ],
   };
   return (
-    <div>
-      <Bar
-        data={data}
-        width={80}
-        height={40}
-        options={{
-          maintainAspectRatio: true,
-        }}
-      />
+    <div className="min-h-full w-full md:w-1/2 p-4">
+      <div className="p-4 shadow rounded-lg bg-white">
+        <Bar
+          data={data}
+          options={{
+            maintainAspectRatio: true,
+          }}
+        />
+      </div>
     </div>
   );
 };
