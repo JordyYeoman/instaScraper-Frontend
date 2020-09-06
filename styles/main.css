@@ -2,10 +2,14 @@
 @tailwind components;
 
 body {
-  @apply bg-gray-100 p-6;
+  @apply bg-gray-100;
 }
 
 @tailwind utilities;
+
+.rounded-xl {
+  border-radius: 15px;
+}
 
 .btn-primary,
 .prose a.btn-primary {

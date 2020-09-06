@@ -3,7 +3,7 @@ import StatsBar from '../components/StatsBar';
 import Navbar from '../components/Navbar';
 import BarChart from '../components/BarChart';
 
-import instaData from '../../../../instagramScraper/db/imageDataScrapes.json';
+import instaData from '../../instaData.json';
 
 const Dashboard = () => {
   console.log(instaData);
