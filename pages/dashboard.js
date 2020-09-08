@@ -1,19 +1,54 @@
+import { useState, useEffect } from 'react';
 import LineChart from '../components/LineChart';
 import StatsBar from '../components/StatsBar';
 import Navbar from '../components/Navbar';
 import BarChart from '../components/BarChart';
+import DateDropdown from '../components/DateDropdown';
+import UserDropdown from '../components/UserDropdown';
 
-import instaData from '../../instaData.json';
+import instaData from '../../../../instagramScraper/db/imageDataScrapes.json';
+
+// const currentUser = 'cruisin_overland';
+// const currentUser = 'jordy_yeoman';
+
+const userNames = ['jordy_yeoman', 'cruisin_overland'];
 
 const Dashboard = () => {
-  console.log(instaData);
+  const [currentUser, SetCurrentUser] = useState('cruisin_overland');
+
+  let Data = instaData[0];
+
+  // Grab data & parse it into individual users
+  const filteredData = Data.filter(obj => {
+    return obj.userName === `${currentUser}`;
+  });
+
+  // Grab all of the scraped dates and place into an array to be mapped over
+  let scrapeDatesIndex = 1;
+  const dataLength = instaData.length / 2;
+  const scrapeDates = [];
+
+  // Using a for-loop instead of filter so we only grab the exact index we need,
+  // instead of potentially iterating over thousand's of items
+  for (let i = 0; i < dataLength; i++) {
+    scrapeDates.push(instaData[scrapeDatesIndex]);
+    scrapeDatesIndex += 2;
+  }
+
+  function userHandle(el) {
+    console.log(`Setting current user: ${el}`);
+    SetCurrentUser(el);
+  }
+
   return (
     <div>
       <Navbar />
       <StatsBar />
+      <UserDropdown dates={userNames} name="Users" userHandle={userHandle} />
+      <DateDropdown dates={scrapeDates} name="Dates" />
       <div className="flex flex-wrap min-h-full sm:h-64 lg:h-auto mb-8">
-        <LineChart data={instaData} />
-        <BarChart data={instaData} />
+        <LineChart data={filteredData} />
+        <BarChart data={filteredData} />
       </div>
       <div className="rounded h-full flex justify-center items-center">
         <div className="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">

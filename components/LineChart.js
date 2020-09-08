@@ -7,7 +7,7 @@ const LineChart = props => {
 
   useEffect(() => {
     async function getData() {
-      let Data = props.data[0];
+      let Data = props.data;
       let instaLikes = [];
       let postTime = [];
       Data.forEach(element => {
@@ -22,7 +22,7 @@ const LineChart = props => {
       setYLabels(instaLikes);
     }
     getData();
-  }, []);
+  }, props.data);
 
   const data = {
     labels: xLabels,

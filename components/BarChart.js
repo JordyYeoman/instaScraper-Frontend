@@ -36,7 +36,7 @@ const BarChart = props => {
     ];
 
     async function getData() {
-      const data = props.data[0];
+      const data = props.data;
       await data.forEach(element => {
         if (element.imgPostTime.y.daySegment === 1) {
           yData[0].tally += 1;
@@ -61,7 +61,7 @@ const BarChart = props => {
       setYLabels(y);
     }
     getData();
-  }, []);
+  }, props.data);
 
   const data = {
     labels: ['12AM - 9AM', '9AM - 12PM', '12PM - 8PM', '8PM - 12AM'],

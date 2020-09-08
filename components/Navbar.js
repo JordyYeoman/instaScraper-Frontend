@@ -38,19 +38,19 @@ const Navigation = () => {
                   clipRule="evenodd"
                 ></path>
               ) : (
-                  <path
-                    fillRule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                  ></path>
-                )}
+                <path
+                  fillRule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                  clipRule="evenodd"
+                ></path>
+              )}
             </svg>
           </button>
         </div>
         <nav
           className={`flex-col flex-grow pb-4 md:pb-0 ${
             isMobileNavOpen ? 'flex' : 'hidden'
-            } md:flex md:justify-end md:flex-row`}
+          } md:flex md:justify-end md:flex-row`}
         >
           <Link href="/">
             <a
@@ -86,8 +86,11 @@ const Navigation = () => {
               FAQ
             </a>
           </Link>
-          <div class="flex justify-center">
-            <img src="/assets/flanders.png" class="rounded-full ml-2 border-solid border-white border-2 w-10" />
+          <div className="flex justify-center">
+            <img
+              src="/assets/flanders.png"
+              className="rounded-full ml-2 border-solid border-white border-2 w-10"
+            />
           </div>
         </nav>
       </div>
