@@ -1,9 +1,8 @@
 const StatsBar = () => {
   return (
     <section className="text-gray-700 body-font">
-      <div className="container px-5 pt-4 pb-0">
+      <div className="px-4 pt-4 pb-0">
         <div className="flex flex-wrap -m-4 text-center">
-
           <div className="p-4 md:w-1/3 sm:w-1/2 w-full">
             <div className="border-2 border-gray-200 px-4 py-2 rounded-lg bg-white">
               <div className="flex items-center justify-between">

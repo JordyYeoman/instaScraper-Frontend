@@ -55,6 +55,7 @@ const UserDropdown = props => {
                   role="menuitem"
                   onClick={() => {
                     props.userHandle(el);
+                    setIsOpen(false);
                   }}
                 >
                   {el}

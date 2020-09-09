@@ -44,8 +44,19 @@ const Dashboard = () => {
     <div>
       <Navbar />
       <StatsBar />
-      <UserDropdown dates={userNames} name="Users" userHandle={userHandle} />
-      <DateDropdown dates={scrapeDates} name="Dates" />
+      <div className="flex items-center justify-between ">
+        <div className="p-2 ml-4 rounded-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
+          <h2>User: {currentUser}</h2>
+        </div>
+        <div>
+          <UserDropdown
+            dates={userNames}
+            name="Users"
+            userHandle={userHandle}
+          />
+          <DateDropdown dates={scrapeDates} name="Dates" />.
+        </div>
+      </div>
       <div className="flex flex-wrap min-h-full sm:h-64 lg:h-auto mb-8">
         <LineChart data={filteredData} />
         <BarChart data={filteredData} />
